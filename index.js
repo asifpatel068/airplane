@@ -3,15 +3,15 @@ const { connection } = require("./Config/db");
 const { userRouter } = require("./Routes/userRouter");
 const { flightRouter } = require("./Routes/flightsRouter");
 const { bookingRouter } = require("./Routes/bookingRoute");
-const { dashboardRouter } = require("./Routes/dashboardROute");
+const { dashboardRouter } = require("./Routes/dashboardRoute");
 
 const app=express()
 const port=6060
 app.use(express.json())
 
-// app.use("/",(req,res)=>{
-//     res.send("Home Page")
-// })
+ app.use("/",(req,res)=>{
+    res.send("Home Page")
+})
 
 app.use("/user",userRouter)
 app.use("/flight",flightRouter)
